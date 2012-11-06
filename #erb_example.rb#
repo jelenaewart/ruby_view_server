@@ -9,6 +9,7 @@ temp2 =  %q{
     <%= "#{pet} are great"  %>
   % end
 }.gsub(/^  /, '')
+
 animals = ["cats", "dogs"]
 sharkplate = ERB.new(temp2, 0, "%<>")
 
