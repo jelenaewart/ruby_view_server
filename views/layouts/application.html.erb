@@ -10,8 +10,19 @@
     <p>
       <h3> I'm a header</h3>
       <p>Put things in the header</p>
-      <%= link_to('This is a link to google', 'http://google.com') %>
-      <a href='me.html'>Me</a>
+
+       <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+           Hello there, <%= @request.query['first_name'] %>
+      <% else %>
+           Enter thy name, fool!
+      <% end %>
+
+
+      <form method='post' action="<%= @request.path %>">
+           First name: <input type="text" name="first_name" placeholder='first name'/><br />
+           <input type="submit" value="Submit" />
+      </form>
+
 
     </p>
     <hr />
